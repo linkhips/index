@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Личный сайт студента GeekBrains</title>
+	<link rel="stylesheet" href="style.css">
+	<script type="text/javascript">
+
+		var score = 0;
+
+		function checkAnswer(inputId, answer){
+			var userAnswer = document.getElementById(inputId).value;
+			for(var i = 0; i < answer.length; i++){
+				if(userAnswer == answer)
+					score++;
+					break;
+				}
+			}
+
+		function checkAnswers(){
+
+			checkAnswer("userAnswer1", "Максим");
+			checkAnswer("userAnswer2", "Geek");
+			checkAnswer("userAnswer3", "Кушаю");
+			if(score == 3)
+				alert('Вы угадали все загадки');
+			else if(score == 2)
+				alert('Вы угадали только две загадки');
+			else if(score == 1)
+				alert('Вы угадали только одну загадку');
+			else
+				alert('Вы ничего не угадали')
+		}
+
+	</script>
+</head>
+<body>
+
+	<div class="header">
+		<a href="index.html">Главная</a>
+		<a href="#">Загадки</a>
+		<a href="ugaday.html">Угадайка</a>
+		<a href="ugadayon2.html">Угадайка на 2</a>
+		<a href="#">Слепая печать</a>
+		<a href="https://vk.com/hipskotsatan">Страница в соц. сети</a>
+	</div>
+
+<div class="contentWrap">
+	<div class="content">
+		<div class="center">
+			
+			<h1>Загадки от Максима</h1>
+
+			<div class="box">
+
+			<p>Кто я?</p>
+			<input type="text" id="userAnswer1">
+
+			<p>Где я учусь?</p>
+			<input type="text" id="userAnswer2">
+
+			<p>Что ты делаешь?</p>
+			<input type="text" id="userAnswer3">
+
+			<br><br>
+			<a href="#" onClick="checkAnswers();">Дать ответ</a>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+<div class="footer">
+	Copyright &copy; HARON.
+</div>
+</body>
+</html>
